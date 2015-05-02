@@ -1,0 +1,91 @@
+<div class="page-header">
+  <h2>Open Job Orders <small>April 30, 2015</small></h2>
+  <span>Viewing {{filtered.length}} of {{positions.length}} open searches</span>
+</div>
+
+<div class="container-fluid">
+
+  <div class="row" align="center">
+
+    <div class="col-md-10">
+
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="searchInput">Search: </label>
+          <input class="form-control" id="focusedInput" type="text" ng-model="query.$" placeholder="search all fields">
+          <label for="selectJobType">Select Job Type:</label>
+          <select  class="form-control" id="focusedInput" type="text" ng-model="query['Title Code']">
+            <option value="">Any</option>
+            <option value="ACCT">Accountant</option>
+            <option value="APSU">Accounts Payable</option>
+            <option value="AUDT">Audit</option>
+            <option value="CAAM">Controller/Acct. Manager</option>
+            <option value="CFVP">CFO/VP</option>
+            <option value="CLRK">Clerk</option>
+            <option value="COST">Cost Accountant</option>
+            <option value="CRCO">Credit and Collections</option>
+            <option value="DICS">DICS</option>
+            <option value="FINM">Finance Manager</option>
+            <option value="FINS">Financial Analyst</option>
+            <option value="FNSY">Financial Systems</option>
+            <option value="HRPR">Human Resources</option>
+            <option value="PRMG">Payroll Manager</option>
+            <option value="TAXA">Tax Accountant</option>
+            <option value="TAXM">Tax Manager</option>
+            <option value="TRSY">Treasury</option>
+          </select>
+          <label for="rep">Rep: </label>
+          <input class="form-control" id="focusedInput" type="text" size=5 ng-model="query.Rep">
+          <label for="jobDescription">Job Description:</label>
+          <input class="form-control" id="focusedInput" type="text" ng-model="query['Job Description']" placeholder="search job description">
+        </div>
+      </form>
+
+      <!--Body content-->
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered sortable" data-pg-collapsed="" id="rcorners2">
+          <thead>
+          <tr data-pg-collapsed="">
+            <th>Job Title </th>
+            <th>Company Name</th>
+            <th>Title Code</th>
+            <th>City</th>
+            <th class="sorttable_numeric">Zip Code</th>
+            <th class="sortable_date">Date Posted</th>
+            <th>Rep</th>
+            <th>Salary Lower</th>
+            <th>Salary Upper</th>
+            <th class="sorttable_numeric"><span>JO Number</span></th>
+          </tr>
+          </thead>
+
+          <tbody data-pg-collapsed="" >
+          <tr ng-repeat="job in filtered = (positions | filter:query)" class="example-animate-container">
+            <td>{{	job["Job Title"]	}}
+                                    <span class="badge" ng-show="job['In Person Count']">
+                                        <span class="glyphicon glyphicon-user">{{	job["In Person Count"]	}}
+                                        </span>
+                                    </span>
+                                    <span class="badge" ng-show="job['Telephone Count']">
+                                        <span class="glyphicon glyphicon-earphone">{{	job["Telephone Count"]	}}
+                                        </span>
+                                    </span>
+            </td>
+            <td>{{	job['Company Name']	}}</td>
+            <td>{{	job["Title Code"]	}}</td>
+            <td>{{	job["City"]	}}</td>
+            <TD>{{	job["Zip"]	}}</TD>
+            <td>{{	job["Date Posted"]	| date: format: 'short'}}</td>
+            <td>{{	job["Rep"]	}}</td>
+            <TD>{{	job["Salary Lower"]  	}}</TD>
+            <td>{{	job["Salary Upper"]		}}</td>
+            <TD>
+              <button type="button" class="btn btn-primary">{{	job["Position Id"]	}}</button>
+            </TD>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>

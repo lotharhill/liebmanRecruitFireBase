@@ -1,0 +1,18 @@
+.badge{
+	background-color:#0088cc;
+    box-shadow: 2px 3px 5px grey;
+}
+
+div.shadow{
+    box-shadow: 2px 3px 5px grey;
+        transition: width 2s;
+        transition-timing-function: ease;
+    
+}
+
+div.shadow:hover{
+    box-shadow: 3px 4px 5px grey;
+    background-color: #0187cc;
+}
+
+
