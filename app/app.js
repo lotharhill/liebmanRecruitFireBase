@@ -11,10 +11,16 @@
                 controller: 'JobController',
                 templateUrl: 'app/jobs/jobList.html'
            })
-            .when('/job',{
+            .when('/jobList/',{
                 controller:'JobController',
-                templateUrl:'jobs/jobList.html'
+                templateUrl:'app/jobs/jobList.html'
+
             })
+
+           .when('/job/:jobId', {
+               controller: 'JobDetailController',
+               templateUrl: 'app/jobs/jobDetail.html'
+           })
 
             .otherwise({ redirectTo: '/'});
     });

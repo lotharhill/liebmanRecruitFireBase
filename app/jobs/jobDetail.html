@@ -1,0 +1,53 @@
+
+<h2>Job Details</h2>
+
+This is the jobDetail Page
+
+
+    <H1>{{	details["Job Title"]	}}
+                                    <span class="badge" ng-show="details['Resume Count']">
+                                        <span class="glyphicon glyphicon-paperclip">{{details['Resume Count']}}
+                                        </span>
+                                    </span>
+                                    <span class="badge" ng-show="details['Presentation Count']">
+                                        <span class="glyphicon glyphicon-share">{{details['Presentation Count']}}
+                                        </span>
+                                    </span>
+                                      <span class="badge" ng-show="details['Telephone Count']">
+                                        <span class="glyphicon glyphicon-earphone">{{	details["Telephone Count"]	}}
+                                        </span>
+                                    </span>
+                                    <span class="badge" ng-show="details['In Person Count']">
+                                        <span class="glyphicon glyphicon-user">{{	details["In Person Count"]	}}
+                                        </span>
+                                    </span>
+
+    </H1>
+    <H2>{{	details['Company Name']	}}</H2>
+
+<p>{{	details["City"]	}}</p>
+<p>{{	details["Zip"]	}}</p>
+<p>{{details['Position Id']}}</p>
+    <p>{{	details["Title Code"]	}}</p>
+<p>{{details['Rep']}}</p>
+
+
+    <p>{{	details["Date Posted"]	| date: format: 'short'}}</p>
+    <p>{{	details["Rep"]	}}</p>
+<p>{{details['Fee']}}</p>
+    <p>{{	details["Salary Lower"]  	}}</p>
+    <p>{{	details["Salary Upper"]		}}</p>
+
+<p>{{details['Contact Name']}}</p>
+<p>{{details['Contact Phone']}}</p>
+<p>{{details['Contact Email']}}</p>
+<p>{{details['Resume Count']}}</p>
+<p>{{details['Presentation Count']}}</p>
+<p>{{details['Telephone Count']}}</p>
+<p>{{details['In Person Count']}}</p>
+
+<p>{{details['Offer Made Count']}}</p>
+
+
+
+<p>{{details['Job Description']}}</p>

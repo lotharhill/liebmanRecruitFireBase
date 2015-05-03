@@ -6,6 +6,21 @@
 
   var JobController = function($scope){
 
+    $scope.sortBy = "job['Position Id']";
+    $scope.reverse = false;
+
+    $scope.doSort = function(propName){
+      $scope.sortBy = propName;
+      $scope.reverse = !$scope.reverse;
+    }
+
+    $scope.toggle = function() {
+      $scope.myVar = !$scope.myVar;
+    }
+
+    $scope.go = function ( path ) {
+      $location.path( path );
+    }
             $scope.positions =
 
               [
