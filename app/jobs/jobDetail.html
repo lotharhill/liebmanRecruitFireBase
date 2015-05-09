@@ -1,53 +1,81 @@
 
-<h2>Job Details</h2>
 
-This is the jobDetail Page
-
-
-    <H1>{{	details["Job Title"]	}}
-                                    <span class="badge" ng-show="details['Resume Count']">
-                                        <span class="glyphicon glyphicon-paperclip">{{details['Resume Count']}}
-                                        </span>
-                                    </span>
-                                    <span class="badge" ng-show="details['Presentation Count']">
-                                        <span class="glyphicon glyphicon-share">{{details['Presentation Count']}}
-                                        </span>
-                                    </span>
-                                      <span class="badge" ng-show="details['Telephone Count']">
-                                        <span class="glyphicon glyphicon-earphone">{{	details["Telephone Count"]	}}
-                                        </span>
-                                    </span>
-                                    <span class="badge" ng-show="details['In Person Count']">
-                                        <span class="glyphicon glyphicon-user">{{	details["In Person Count"]	}}
-                                        </span>
-                                    </span>
-
-    </H1>
-    <H2>{{	details['Company Name']	}}</H2>
-
-<p>{{	details["City"]	}}</p>
-<p>{{	details["Zip"]	}}</p>
-<p>{{details['Position Id']}}</p>
-    <p>{{	details["Title Code"]	}}</p>
-<p>{{details['Rep']}}</p>
+<div class="container-fluid">
+    <div class="col-md-6">
+        <h2>{{	details["Job Title"]	}}
+            <span class="badge" ng-show="details['Resume Count']">
+                <span class="glyphicon glyphicon-paperclip">{{details['Resume Count']}}
+                </span>
+            </span>
+            <span class="badge" ng-show="details['Presentation Count']">
+                <span class="glyphicon glyphicon-share">{{details['Presentation Count']}}
+                </span>
+            </span>
+            <span class="badge" ng-show="details['Telephone Count']">
+                <span class="glyphicon glyphicon-earphone">{{	details["Telephone Count"]	}}
+                </span>
+            </span>
+            <span class="badge" ng-show="details['In Person Count']">
+                <span class="glyphicon glyphicon-user">{{	details['In Person Count']	}}
+                </span>
+            </span>
+        </h2>
 
 
-    <p>{{	details["Date Posted"]	| date: format: 'short'}}</p>
-    <p>{{	details["Rep"]	}}</p>
-<p>{{details['Fee']}}</p>
-    <p>{{	details["Salary Lower"]  	}}</p>
-    <p>{{	details["Salary Upper"]		}}</p>
+        <h4>
+            Title Code: {{	details["Title Code"]	}}
+        </h4>
+        <p>
+            Fee: {{details['Fee']}}%
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h2>
+            <a ng-href="http://www.century-group.com/jobs/{{details['Position Id']}}/" target="_blank">
+            Job ID: {{details['Position Id']}}
+            </a>
+        </h2>
+        <span>
+            <h4>
+            Rep: {{details['Rep']}}
+            </h4>
+            <p>
+                Open Since: {{	details["Date Posted"]	| date: format: 'short'}}
+            </p>
+        </span>
+    </div>
+    <div class="col-md-3">
+        <h2>
+            {{	details['Company Name']	}}
+        </h2>
+            <h4>{{	details["City"]	}}, {{	details["Zip"]	}}
+            </h4>
+        <h4>{{details['Contact Name']}}</h4>
+        <p>{{details['Contact Phone']}}</p>
+        <!-- Will be set to send email but disabled for testing -->
+        <!--         <a ng-href="mailto:{{details['Contact Email']}}?Subject={{	details['Job Title']	}}" target="_top">  -->
+        {{details['Contact Email']}}
+        </a>
+    </div>
+        <div>
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <p class="col-md-8">{{details['Job Description']}}
+                </p>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create Match
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
 
-<p>{{details['Contact Name']}}</p>
-<p>{{details['Contact Phone']}}</p>
-<p>{{details['Contact Email']}}</p>
-<p>{{details['Resume Count']}}</p>
-<p>{{details['Presentation Count']}}</p>
-<p>{{details['Telephone Count']}}</p>
-<p>{{details['In Person Count']}}</p>
-
-<p>{{details['Offer Made Count']}}</p>
-
-
-
-<p>{{details['Job Description']}}</p>

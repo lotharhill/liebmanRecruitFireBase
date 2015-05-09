@@ -62,15 +62,20 @@
 
           <tbody data-pg-collapsed="" >
           <tr ng-repeat="job in filtered = (positions | filter:query)" class="example-animate-container">
-            <td>{{	job["Job Title"]	}}
-                                    <span class="badge" ng-show="job['In Person Count']">
-                                        <span class="glyphicon glyphicon-user">{{	job["In Person Count"]	}}
-                                        </span>
-                                    </span>
-                                    <span class="badge" ng-show="job['Telephone Count']">
-                                        <span class="glyphicon glyphicon-earphone">{{	job["Telephone Count"]	}}
-                                        </span>
-                                    </span>
+            <td>
+              <a href="#/job/{{ job['Position Id'] }}" >
+                {{	job["Job Title"]	}}
+              </a>
+              <span class="badge" ng-show="job['In Person Count']">
+                <span class="glyphicon glyphicon-user">
+                  {{	job["In Person Count"]	}}
+                </span>
+              </span>
+              <span class="badge" ng-show="job['Telephone Count']">
+                <span class="glyphicon glyphicon-earphone">
+                  {{	job["Telephone Count"]	}}
+                </span>
+              </span>
             </td>
             <td>{{	job['Company Name']	}}</td>
             <td>{{	job["Title Code"]	}}</td>
@@ -83,7 +88,7 @@
             <TD>
               <button type="button" class="btn btn-primary"
                       ng-click="go('#/job/11675')">{{	job["Position Id"]	}}</button>
-              <a href="#/job/{{ job['Position Id'] }}" >view job description</a>
+
 
 
             </TD>

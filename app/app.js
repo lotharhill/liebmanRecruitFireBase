@@ -3,7 +3,8 @@
  */
 (function(){
 
-    var app = angular.module('lRecruitApp', ['ngRoute']);
+    var app = angular.module('lRecruitApp', ['ngRoute', 'firebase']);
+
 
     app.config(function($routeProvider){
        $routeProvider
@@ -22,6 +23,10 @@
                templateUrl: 'app/jobs/jobDetail.html'
            })
 
+           .when('/match/', {
+               controller: 'lRecruitCtrl',
+               templateUrl: 'app/views/main.html'
+           })
             .otherwise({ redirectTo: '/'});
     });
 }());
